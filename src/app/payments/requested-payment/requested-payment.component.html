@@ -1,0 +1,60 @@
+<div class="container">
+  <p>
+    Создайте платёжку, а Индивидуальный предприниматель ... подпишет ее у себя в
+    интернет-банке
+  </p>
+
+  <form [formGroup]="reqForm" (ngSubmit)="onFormSubmit()">
+    <div class="form-group">
+      <label for="innForm" class="control-label">ИНН</label>
+      <input type="text" id="innForm" formControlName="inn" />
+    </div>
+
+    <div class="form-group">
+      <label for="bicForm" class="control-label">БИК</label>
+      <input type="text" id="bicForm" formControlName="bic" />
+    </div>
+
+    <div class="form-group">
+      <label for="numberForm" class="control-label">Номер счета</label>
+      <input type="text" id="numberForm" formControlName="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="ndsForm">За что</label>
+      <select id="ndsForm" formControlName="nds">
+        <option *ngFor="let g of ndsList" [value]="g"> {{ g }} </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="howmuchForm" class="control-label">Сколько</label>
+      <input type="number" id="howmuchForm" formControlName="howmuch" />
+    </div>
+
+    <div class="form-group">
+      <label for="phoneForm" class="control-label">Номер телефона</label>
+      <input type="tel" ui-mask="(999) 999-9999" id="phoneForm" formControlName="phone" />
+    </div>
+
+    <div class="form-group">
+      <label for="emailForm" class="control-label">Электронная почта</label>
+      <input type="email"
+        id="emailForm"
+        formControlName="email"
+        placeholder="Для уведомлений об оплате"
+      />
+    </div>
+
+    <div class="form-group">
+      <button type="reset" class="btn btn-default">Очистить</button>
+      <button
+        type="submit"
+        [disabled]="!reqForm.valid">
+        Отправить
+      </button>
+    </div>
+  </form>
+</div>
+<p>Form value {{ reqForm.value | json }}</p>
+<p>Form status {{ reqForm.status | json }}</p>

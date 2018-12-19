@@ -1,0 +1,89 @@
+<div class="admin-panel">
+  <aside>
+    <!--
+      Сделать поиск и смену в верху страницы, что-то сделать с сортировкой (возможно в самой таблице)
+    -->
+    <button id="trigger_button" (click)="toggle()">Toggle</button>
+    <div class="search">
+      <form>
+        <input
+          type="text"
+          [(ngModel)]="searchField"
+          name="search-field"
+          id="search-field"
+          placeholder="field"
+        />
+        <input
+          type="text"
+          [(ngModel)]="searchFilter"
+          name="filter"
+          id="filter"
+          placeholder="filter"
+        />
+        <input type="submit" (click)="search()" value="Поиск">
+      </form>
+    </div>
+  </aside>
+
+  <!-- Таблица для запрошенных платежей -->
+  <table *ngIf="!showCardTable">
+    <thead>
+      <tr>
+        <th>ИНН</th>
+        <th>БИК</th>
+        <th>НОМЕР СЧЕТА</th>
+        <th>ЗА ЧТО</th>
+        <th>СУММА ПЕРЕВОДА</th>
+        <th>НОМЕР ТЕЛЕФОНА</th>
+        <th>EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rpayment of rpayments">
+        <td>{{ rpayment?.inn }}</td>
+        <td>{{ rpayment?.bic }}</td>
+        <td>{{ rpayment?.number }}</td>
+        <td>{{ rpayment?.nds }}</td>
+        <td>{{ rpayment?.howmuch }}</td>
+        <td>{{ rpayment?.phone }}</td>
+        <td>{{ rpayment?.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Таблица для платежей по карте -->
+  <table *ngIf="showCardTable">
+    <thead>
+      <tr>
+        <th>НОМЕР КАРТЫ</th>
+        <th>СУММА ПЕРЕВОДА</th>
+        <th>ВРЕМЯ ДЕЙСТВИЯ КАРТЫ</th>
+        <th>CVC</th>
+        <th>КОММЕНТАРИЙ</th>
+        <th>EMAIL</th>
+        <th>БЕЗОПАСНЫЙ<br />ПЛАТЕЖ</th>
+        <th>КОРРЕКТНЫЙ<br />ПЛАТЕЖ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cpayment of cpayments">
+        <td>{{ cpayment?.number }}</td>
+        <td>{{ cpayment?.howmuch }}</td>
+        <td>{{ cpayment?.ttl }}</td>
+        <td>{{ cpayment?.cvc }}</td>
+        <td>{{ cpayment?.comment }}</td>
+        <td>{{ cpayment?.email }}</td>
+        <td>
+          <button (click)="updateSafe(cpayment?._id)">
+            {{ cpayment?.notsafe }}
+          </button>
+        </td>
+        <td>
+          <button (click)="updateCorrect(cpayment?._id)">
+            {{ cpayment?.notcorrect }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
