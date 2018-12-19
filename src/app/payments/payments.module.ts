@@ -8,17 +8,23 @@ import { PaymentsComponent } from './payments/payments.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeadComponent } from './head/head.component';
 import { FootComponent } from './foot/foot.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+    { path: 'card-payment', component: CardPaymentComponent },
+    { path: 'client-payment', component: ClientPaymentComponent },
+    { path: 'requested-payment', component: RequestedPaymentComponent }
+];
 
 @NgModule({
     declarations: [
-        RequestedPaymentComponent,
+        PaymentsComponent,
         CardPaymentComponent,
         ClientPaymentComponent,
-        PaymentsComponent,
+        RequestedPaymentComponent,
         HeadComponent,
         FootComponent
     ],
-    imports: [CommonModule, RouterModule, ReactiveFormsModule]
+    imports: [RouterModule.forRoot(routes), CommonModule, ReactiveFormsModule],
 })
 export class PaymentsModule {}
