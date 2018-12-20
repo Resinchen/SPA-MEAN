@@ -1,11 +1,3 @@
-.container {
-    font-family: Helvetica, Roboto, sans-serif;
-    margin: 30px 30px 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-}
-
 h1 {
     font-size: 40px;
     margin: 0;
@@ -24,6 +16,14 @@ a {
 img {
     width: 200px;
     height: 200px;
+}
+
+.container {
+    font-family: Helvetica, Roboto, sans-serif;
+    margin: 30px 30px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
 .phone {
