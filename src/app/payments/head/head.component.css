@@ -1,51 +1,69 @@
 .container {
-  font-family: Helvetica, Roboto, sans-serif;
-  margin: 30px 30px 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
+    font-family: Helvetica, Roboto, sans-serif;
+    margin: 30px 30px 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
 
-h2 {
-  font-size: 40px;
-  margin: 0;
+h1 {
+    font-size: 40px;
+    margin: 0;
 }
 
 a {
-  text-decoration: none;
-  color: #0D7ED7;
+    text-decoration: none;
+    color: #0d7ed7;
 }
 
 p,
 a {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 img {
-  width: 200px;
-  height: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 .phone {
-  display: inline-block;
-  margin-bottom: 5px;
-  margin-right: 25px;
-  color: gray;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 25px;
+    color: gray;
 }
 
 .site {
-  margin-right: 25px;
+    margin-right: 25px;
 }
 
 .company {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .requisites {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .company,
 .requisites {
-  display: block;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .info {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .info * {
+        text-align: center;
+    }
 }
