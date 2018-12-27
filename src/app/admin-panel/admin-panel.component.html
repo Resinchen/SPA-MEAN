@@ -3,7 +3,6 @@
     <!--
       Сделать поиск и смену в верху страницы, что-то сделать с сортировкой (возможно в самой таблице)
     -->
-    <button id="trigger_button" (click)="toggle()">Toggle</button>
     <div class="search">
       <form>
         <input
@@ -23,6 +22,28 @@
         <input type="submit" (click)="search()" value="Поиск">
       </form>
     </div>
+    <div class="filter">
+        <form>
+            <input
+              type="text"
+              [(ngModel)]="searchField"
+              name="search-field"
+              id="search-field"
+              placeholder="field"
+            />
+            <input
+              type="text"
+              [(ngModel)]="searchFilter"
+              name="filter"
+              id="filter"
+              placeholder="direction"
+            />
+            <input type="submit" (click)="search()" value="Поиск">
+          </form>
+    </div>
+    <button id="trigger_button" (click)="toggle()">Toggle</button>
+    <button id="logout_button" (click)="logout()">Logout</button>
+
   </aside>
 
   <!-- Таблица для запрошенных платежей -->

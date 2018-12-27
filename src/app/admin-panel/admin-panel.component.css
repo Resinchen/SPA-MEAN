@@ -10,6 +10,10 @@ table {
   border-radius: 3px;
 
   box-shadow: 0 1px 2px #d1d1d1;
+
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 table th {
@@ -65,7 +69,7 @@ table tr:hover td {
   background: #f2f2f2;
 }
 
-
-main {
-  width: 80%;
+aside {
+    display: inline-block;
 }
+
