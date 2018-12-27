@@ -5,6 +5,7 @@ import { PaymentsComponent } from './payments/payments/payments.component';
 import { CardPaymentComponent } from './payments/card-payment/card-payment.component';
 import { ClientPaymentComponent } from './payments/client-payment/client-payment.component';
 import { RequestedPaymentComponent } from './payments/requested-payment/requested-payment.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
     { path: 'admin', component: AdminPanelComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
             { path: 'client-payment', component: ClientPaymentComponent },
             { path: 'requested-payment', component: RequestedPaymentComponent }
         ]
-    }
+    },
+    { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

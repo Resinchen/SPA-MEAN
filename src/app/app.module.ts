@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { PaymentsModule } from './payments/payments.module';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-    declarations: [AppComponent, AdminPanelComponent],
+    declarations: [AppComponent, AdminPanelComponent, NotFoundComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
