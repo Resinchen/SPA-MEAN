@@ -30,16 +30,14 @@ export class HttpService {
   updateSafePayment(id: string) {
     return this.http.patch('http://localhost:3012/card-payment', {
       _id: id,
-      field: 'notsafe',
-      bool: true
+      field: 'notsafe'
     });
   }
 
   updateCorrectPayment(id: string) {
     return this.http.patch('http://localhost:3012/card-payment', {
       _id: id,
-      field: 'notcorrect',
-      bool: true
+      field: 'notcorrect'
     });
   }
 

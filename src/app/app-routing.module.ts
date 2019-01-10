@@ -6,6 +6,7 @@ import { CardPaymentComponent } from './payments/card-payment/card-payment.compo
 import { ClientPaymentComponent } from './payments/client-payment/client-payment.component';
 import { RequestedPaymentComponent } from './payments/requested-payment/requested-payment.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PayComponent } from './payments/pay/pay.component';
 
 const routes: Routes = [
     { path: 'admin', component: AdminPanelComponent },
@@ -13,8 +14,7 @@ const routes: Routes = [
         path: '',
         component: PaymentsComponent,
         children: [
-            { path: 'card-payment', component: CardPaymentComponent },
-            { path: 'client-payment', component: ClientPaymentComponent },
+            { path: 'pay', component: PayComponent },
             { path: 'requested-payment', component: RequestedPaymentComponent }
         ]
     },
