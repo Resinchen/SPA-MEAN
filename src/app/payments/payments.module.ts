@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeadComponent } from './head/head.component';
 import { FootComponent } from './foot/foot.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PayComponent } from './pay/pay.component';
 
 const routes: Routes = [
     { path: 'card-payment', component: CardPaymentComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [
+        PayComponent,
         PaymentsComponent,
         CardPaymentComponent,
         ClientPaymentComponent,
@@ -25,6 +27,6 @@ const routes: Routes = [
         HeadComponent,
         FootComponent
     ],
-    imports: [RouterModule.forRoot(routes), CommonModule, ReactiveFormsModule],
+    imports: [RouterModule.forChild(routes), CommonModule, ReactiveFormsModule],
 })
 export class PaymentsModule {}
