@@ -1,75 +1,92 @@
 table {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #666;
-  font-size: 12px;
-  text-shadow: 1px 1px 0px #fff;
-  background: #eaebec;
-  border: #ccc 1px solid;
-  border-collapse: separate;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    font-size: 12px;
+    text-shadow: 1px 1px 0px #fff;
+    background: #eaebec;
+    border: #ccc 1px solid;
+    border-collapse: separate;
 
-  border-radius: 3px;
+    border-radius: 3px;
 
-  box-shadow: 0 1px 2px #d1d1d1;
+    box-shadow: 0 1px 2px #d1d1d1;
 
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 10px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 table th {
-  font-weight: bold;
-  border-top: 1px solid #fafafa;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 10px;
-  background: #ededed;
+    font-weight: bold;
+    border-top: 1px solid #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    background: #ededed;
 }
 
 table tr:first-child th:first-child {
-  border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
 }
 
 table tr:first-child th:last-child {
-  border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 table tr {
-  text-align: center;
-  padding-left: 20px;
+    text-align: center;
+    padding-left: 20px;
 }
 
 table tr td:first-child {
-  border-left: 0;
+    border-left: 0;
 }
 
 table tr td {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  border-left: 1px solid #e0e0e0;
-  padding: 10px;
-  background: #fafafa;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    padding: 10px;
+    background: #fafafa;
 }
 
 table tr:nth-child(even) td {
-  background: #f6f6f6;
+    background: #f6f6f6;
 }
 
 table tr:last-child td {
-  border-bottom: 0;
+    border-bottom: 0;
 }
 
 table tr:last-child td:first-child {
-  border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 table tr:last-child td:last-child {
-  border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 table tr:hover td {
-  background: #f2f2f2;
+    background: #f2f2f2;
 }
 
 aside {
     display: inline-block;
 }
 
+.btn_patch {
+    padding: 5px;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn_patch[value='true'] {
+    background: green;
+}
+
+.btn_patch[value='false'] {
+    background: red;
+}

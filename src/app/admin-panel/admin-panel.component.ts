@@ -5,16 +5,16 @@ import { RequestedPayment } from '../RequestedPayment';
 import { CardPayment } from '../CardPayment';
 
 const fields: { [id: string]: string } = {
-    ИНН: 'inn',
-    БИК: 'bic',
+    'ИНН': 'inn',
+    'БИК': 'bic',
     'номер карты': 'number',
     'за что': 'nds',
-    сколько: 'howmuch',
-    телефон: 'phone',
-    почта: 'email',
+    'сколько': 'howmuch',
+    'телефон': 'phone',
+    'почта': 'email',
     'время карты': 'ttl',
-    cvc: 'cvc',
-    комментарий: 'comment',
+    'cvc': 'cvc',
+    'комментарий': 'comment',
     'безопасный платеж': 'notsafe',
     'корректный платеж': 'notcorrect',
     'номер счета': 'number'
@@ -49,26 +49,26 @@ export class AdminPanelComponent implements OnInit {
         this.showCardTable = !this.showCardTable;
     }
     // Че-то тут не то...
-    updateSafe(id) {
-        this.httpService.updateSafePayment(id).subscribe(
+    updateSafe(cpayment) {
+        this.httpService.updateSafePayment(cpayment._id).subscribe(
             err => {
                 console.log('Error occured', err);
             },
             res => {
                 console.log(res);
-                location.reload();
+                cpayment.notsafe = !cpayment.notsafe;
             }
         );
     }
 
-    updateCorrect(id) {
-        this.httpService.updateCorrectPayment(id).subscribe(
+    updateCorrect(cpayment) {
+        this.httpService.updateCorrectPayment(cpayment._id).subscribe(
             err => {
                 console.log('Error occured', err);
             },
             res => {
                 console.log(res);
-                location.reload();
+                cpayment.notcorrect = !cpayment.notcorrect;
             }
         );
     }
