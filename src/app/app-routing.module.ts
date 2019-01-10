@@ -14,7 +14,14 @@ const routes: Routes = [
         path: '',
         component: PaymentsComponent,
         children: [
-            { path: 'pay', component: PayComponent },
+            {
+                path: 'pay',
+                component: PayComponent,
+                children: [
+                    { path: 'card-payment', component: CardPaymentComponent },
+                    { path: 'client-payment', component: ClientPaymentComponent }
+                ]
+            },
             { path: 'requested-payment', component: RequestedPaymentComponent }
         ]
     },

@@ -12,8 +12,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PayComponent } from './pay/pay.component';
 
 const routes: Routes = [
-    { path: 'card-payment', component: CardPaymentComponent },
-    { path: 'client-payment', component: ClientPaymentComponent },
+    { path: 'pay/card-payment', component: CardPaymentComponent },
+    { path: 'pay/client-payment', component: ClientPaymentComponent },
     { path: 'requested-payment', component: RequestedPaymentComponent }
 ];
 
