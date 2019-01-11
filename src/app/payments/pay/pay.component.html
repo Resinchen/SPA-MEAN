@@ -1,6 +1,7 @@
 <div class="container">
-    <a routerLink="card-payment">С карты любого банка</a>
-    <a routerLink="client-payment">Из своего интернет-банка</a>
-
+    <nav>
+        <a routerLink="card-payment" routerLinkActive="active"> <span class="icon-credit-card"></span> С карты любого банка</a>
+        <a routerLink="client-payment" routerLinkActive="active"> <span class="icon-desktop"></span> Из своего интернет-банка</a>
+    </nav>
     <router-outlet></router-outlet>
 </div>

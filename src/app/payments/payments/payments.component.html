@@ -1,9 +1,10 @@
 <app-head></app-head>
 <hr />
 <div class="container">
-    <a routerLink="/pay">Заплатить</a>
-    <a routerLink="/requested-payment">Запросить платеж</a>
-
+    <nav>
+        <a routerLink="/pay" routerLinkActive="active">Заплатить</a>
+        <a routerLink="/requested-payment" routerLinkActive="active">Запросить платеж</a>
+    </nav>
     <router-outlet></router-outlet>
 </div>
 <hr />
