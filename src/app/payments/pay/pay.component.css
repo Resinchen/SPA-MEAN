@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('../../../fonts/fontello.eot?98367388');
+    src: url('../../../fonts/fontello.eot?98367388#iefix')
+            format('embedded-opentype'),
+        url('../../../fonts/fontello.woff2?98367388') format('woff2'),
+        url('../../../fonts/fontello.woff?98367388') format('woff'),
+        url('../../../fonts/fontello.ttf?98367388') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^='icon-']::before {
+    font-family: 'fontello';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.icon-credit-card::before {
+    content: '\e800';
+}
+
+.icon-desktop::before {
+    content: '\f108';
+}
+
+a {
+    text-decoration: none;
+    color: #0d7ed7;
+    font-size: 16px;
+    margin-left: 40px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.active {
+    color: black;
+    background: rgba(0, 0, 0, 0.1);
+}

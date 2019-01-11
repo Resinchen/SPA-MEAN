@@ -7,6 +7,15 @@ a {
     color: #0d7ed7;
     font-size: 30px;
     margin-left: 40px;
+    font-weight: bold;
+}
+
+nav {
+    margin: 40px 0;
+}
+
+.active {
+    color: black;
 }
 
 .container {
