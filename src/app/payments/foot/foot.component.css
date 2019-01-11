@@ -1,3 +1,41 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('../../../fonts/fontello.eot?98367388');
+    src: url('../../../fonts/fontello.eot?98367388#iefix')
+            format('embedded-opentype'),
+        url('../../../fonts/fontello.woff2?98367388') format('woff2'),
+        url('../../../fonts/fontello.woff?98367388') format('woff'),
+        url('../../../fonts/fontello.ttf?98367388') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^='icon-']::before {
+    font-family: 'fontello';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.icon-twitter::before {
+    content: '\f099';
+}
+
+.icon-facebook::before {
+    content: '\f09a';
+}
+
+.icon-vkontakte::before {
+    content: '\f189';
+}
+
+.icon-mail-alt::before {
+    content: '\f0e0';
+}
+
+.icon-gplus::before {
+    content: '\f0d5';
+}
+
 h1 {
     font-size: 30px;
     margin: 0;
@@ -27,6 +65,21 @@ a {
 
 .card-name {
     font-weight: bold;
+}
+
+.socials > a {
+    margin-right: 10px;
+    padding: 1px 7px;
+    background: #e6e6e6;
+    color: black;
+}
+
+.wiki {
+    margin-bottom: 30px;
+}
+
+.socials > a:hover {
+    background: lightgray;
 }
 
 @media (max-width: 768px) {
