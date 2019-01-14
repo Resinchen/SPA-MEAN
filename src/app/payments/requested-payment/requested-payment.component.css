@@ -125,3 +125,7 @@ input[type="number"] {
     color: blue;
     border: 0;
 }
+
+.ng-valid.bottom-border {
+    border-color: green;
+}

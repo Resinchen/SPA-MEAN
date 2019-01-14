@@ -1,0 +1,112 @@
+#info {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group:nth-child(4) {
+    margin-bottom: 65px;
+}
+
+.form-group > label {
+    color: gray;
+}
+
+.form-group > input {
+    position: absolute;
+    left: 400px;
+}
+
+.form-value-nds {
+    position: absolute;
+    left: 400px;
+    top: 551px;
+}
+
+.none-border {
+    border: 0;
+}
+
+.bottom-border {
+    border: 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.long-border {
+    width: 475px;
+}
+
+.short-border {
+    width: 220px;
+}
+
+.nds-button {
+    display: none;
+}
+
+.nds-label {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#nds1:not(:checked) ~ label[for='nds1'],
+#nds2:not(:checked) ~ label[for='nds2'],
+#nds3:not(:checked) ~ label[for='nds3'] {
+    color: blue;
+}
+
+#nds1:checked ~ label[for='nds1'],
+#nds2:checked ~ label[for='nds2'],
+#nds3:checked ~ label[for='nds3'] {
+    color: black;
+}
+
+#innForm {
+    width: 250px;
+}
+
+#infoNDS {
+    color: gray;
+    font-size: 11px;
+}
+
+#valueNDS {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    font-size: 16px;
+}
+
+input.ng-valid {
+    border-color: green;
+}
+
+.btn {
+    width: 250px;
+    height: 40px;
+    display: block;
+    background: none;
+}
+
+.btn-submit {
+    color: gray;
+    border: 1px solid gray;
+    background: linear-gradient(to top right,
+                    #B3E5F9, #BAC5E4, #ECA0C7);
+}
+
+.btn-submit:enabled {
+    color: black;
+    font-weight: bold;
+}
+
+.btn-reset {
+    color: blue;
+    text-align: left;
+    border: 0;
+}

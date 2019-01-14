@@ -1,3 +1,86 @@
-<p>
-  client-payment works!
-</p>
+<div class="container">
+    <form [formGroup]="clientForm" (ngSubmit)="onFormSubmit()">
+        <div class="form-group">
+            <label for="innForm" class="control-label">От кого</label>
+            <input
+                class="none-border"
+                type="text"
+                id="innForm"
+                formControlName="inn"
+                placeholder="ИНН или название плательщика"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="bicForm" class="control-label">БИК</label>
+            <input
+                class="bottom-border long-border"
+                type="text"
+                id="bicForm"
+                formControlName="bic"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="numberForm" class="control-label">Номер счёта</label>
+            <input
+                class="bottom-border long-border"
+                type="text"
+                id="numberForm"
+                formControlName="number"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="ndsForm">За что</label>
+
+            <div class="form-value-nds">
+                <p id="infoNDS">Назначение платежа</p>
+                <p id="valueNDS">{{ clientForm.value.nds }}</p>
+                <input
+                    type="radio"
+                    formControlName="nds"
+                    id="nds1"
+                    class="nds-button"
+                    value="НДС 18%"
+                />
+                <input
+                    type="radio"
+                    formControlName="nds"
+                    id="nds2"
+                    class="nds-button"
+                    value="НДС 10%"
+                />
+                <input
+                    type="radio"
+                    formControlName="nds"
+                    id="nds3"
+                    class="nds-button"
+                    value="Без НДС"
+                />
+
+                <label class="nds-label" for="nds1">НДС 18%</label>
+                <label class="nds-label" for="nds2">НДС 10%</label>
+                <label class="nds-label" for="nds3">Без НДС</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="howmuchForm" class="control-label">Сколько</label>
+            <input
+                class="bottom-border short-border"
+                type="number"
+                id="howmuchForm"
+                formControlName="howmuch"
+            />
+        </div>
+        <div class="form-group">
+            <!-- Починить скачивание файла -->
+            <button type="submit" class="btn btn-submit" [disabled]="!clientForm.valid">Получить файл для интернет-банка</button>
+            <button type="reset" class="btn btn-reset">Очистить форму</button>
+        </div>
+
+    </form>
+    <p>Form value {{ clientForm.value | json }}</p>
+    <p>Form status {{ clientForm.status | json }}</p>
+</div>

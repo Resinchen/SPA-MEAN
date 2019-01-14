@@ -10,7 +10,7 @@ import { PayComponent } from './payments/pay/pay.component';
 
 const routes: Routes = [
     { path: 'admin', component: AdminPanelComponent },
-    { path: '', redirectTo: 'pay', pathMatch: 'full'},
+    { path: '', redirectTo: 'pay/card-payment', pathMatch: 'full'},
     {
         path: '',
         component: PaymentsComponent,
