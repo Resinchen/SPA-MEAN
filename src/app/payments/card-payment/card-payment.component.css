@@ -1,0 +1,124 @@
+form {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+form > div {
+    height: 200px;
+}
+
+.card-box {
+    width: 400px;
+    margin-right: 120px;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0px 10px 23px 3px rgba(75, 74, 74, 0.5);
+}
+
+.none-border {
+    border: 0;
+}
+
+.tiny-border {
+    width: 90px;
+}
+
+.short-border {
+    width: 310px;
+}
+
+.bottom-border {
+    border: 0;
+    border-bottom: 1px solid lightgray;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    display: block;
+    background: none;
+}
+
+.btn-submit {
+    color: gray;
+    border: 1px solid gray;
+    background: linear-gradient(to top right, #b3e5f9, #bac5e4, #eca0c7);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'] {
+    font-size: 20px;
+    background: transparent;
+}
+
+input[type='email'],
+input[type='text'] {
+    padding-left: 15px;
+}
+
+#numberForm {
+    width: 325px;
+}
+
+#howmuchForm {
+    width: 210px;
+}
+
+#number-form-group {
+    position: relative;
+    top: 25px;
+    left: 20px;
+}
+
+#ttl-form-group {
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+#cvc-form-group {
+    position: relative;
+    top: 24px;
+    left: 210px;
+}
+
+.images {
+    position: relative;
+    top: 5px;
+    left: 200px;
+}
+
+.images > img {
+    width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+input.ng-valid:not(.not-selection) {
+    border-color: green;
+}
+
+.btn-submit:enabled {
+    color: black;
+    font-weight: bold;
+}
+
+.outer-box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 530px;
+}
+
+.control-label {
+    font-weight: bold;
+    margin-right: 50px;
+}
+#summa-label {
+    margin-right: 110px;
+}
+
+#email-label {
+    margin-right: 40px;
+}

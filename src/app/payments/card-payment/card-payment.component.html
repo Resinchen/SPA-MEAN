@@ -1,57 +1,91 @@
 <div class="container">
+    <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
+        <div class="card-box">
+            <div class="images">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2000px-Visa_Inc._logo.svg.png" alt="visa" />
+                <img src="https://logospng.org/download/mastercard/logo-mastercard-256.png" alt="mastercard" />
+                <img src="https://cdn.iconscout.com/icon/free/png-256/maestro-6-711794.png" alt="maestro" />
+            </div>
+            <div id="number-form-group" class="form-group">
+                <input
+                    type="text"
+                    class="bottom-border middle-border"
+                    placeholder="Номер карты"
+                    id="numberForm"
+                    formControlName="number"
+                />
+            </div>
+            <div id="ttl-form-group" class="form-group">
+                <input
+                    type="text"
+                    class="bottom-border tiny-border"
+                    placeholder="ММ/ГГ"
+                    id="ttlForm"
+                    formControlName="ttl"
+                />
+            </div>
+            <div id="cvc-form-group" class="form-group">
+                <input
+                    type="text"
+                    class="bottom-border tiny-border"
+                    placeholder="CVC"
+                    id="cvcForm"
+                    formControlName="cvc"
+                />
+            </div>
+        </div>
+        <div class="outer-box">
+            <div class="form-group">
+                <label for="howmuchForm" id="summa-label" class="control-label">Сумма</label>
+                <input
+                    type="number"
+                    class="none-border"
+                    id="howmuchForm"
+                    min="1000"
+                    max="75000"
+                    formControlName="howmuch"
+                    placeholder="от 1 000 до 75 000 ₽"
+                />
+            </div>
 
+            <div class="form-group">
+                <label for="commetForm" class="control-label">
+                    Комментарий
+                </label>
+                <input
+                    type="text"
+                    class="bottom-border short-border not-selection"
+                    formControlName="comment"
+                    id="commetForm"
+                    placeholder="До 150 символов"
+                    maxlength="150"
+                />
+            </div>
 
-    <form [formGroup]="reqForm" (ngSubmit)="onFormSubmit()">
-      <div class="form-group">
-        <label for="innForm" class="control-label">ИНН</label>
-        <input type="text" id="innForm" formControlName="inn" />
-      </div>
+            <div class="form-group">
+                <label for="emailForm" id="email-label"  class="control-label">
+                    Ваша эл. почта
+                </label>
+                <input
+                    class="bottom-border short-border"
+                    type="email"
+                    id="emailForm"
+                    formControlName="email"
+                    placeholder="Для уведомлений об оплате"
+                />
+            </div>
 
-      <div class="form-group">
-        <label for="bicForm" class="control-label">БИК</label>
-        <input type="text" id="bicForm" formControlName="bic" />
-      </div>
-
-      <div class="form-group">
-        <label for="numberForm" class="control-label">Номер счета</label>
-        <input type="text" id="numberForm" formControlName="number" />
-      </div>
-
-      <div class="form-group">
-        <label for="ndsForm">За что</label>
-        <select id="ndsForm" formControlName="nds">
-          <option *ngFor="let g of ndsList" [value]="g"> {{ g }} </option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="howmuchForm" class="control-label">Сколько</label>
-        <input type="number" id="howmuchForm" formControlName="howmuch" />
-      </div>
-
-      <div class="form-group">
-        <label for="phoneForm" class="control-label">Номер телефона</label>
-        <input type="tel" ui-mask="(999) 999-9999" id="phoneForm" formControlName="phone" />
-      </div>
-
-      <div class="form-group">
-        <label for="emailForm" class="control-label">Электронная почта</label>
-        <input type="email"
-          id="emailForm"
-          formControlName="email"
-          placeholder="Для уведомлений об оплате"
-        />
-      </div>
-
-      <div class="form-group">
-        <button type="reset" class="btn btn-default">Очистить</button>
-        <button
-          type="submit"
-          [disabled]="!reqForm.valid">
-          Отправить
-        </button>
-      </div>
+            <div class="form-group">
+                <button
+                    type="submit"
+                    class="btn btn-submit"
+                    [disabled]="!cardForm.valid"
+                >
+                    Зплатить
+                </button>
+            </div>
+        </div>
     </form>
-  </div>
-  <p>Form value {{ reqForm.value | json }}</p>
-  <p>Form status {{ reqForm.status | json }}</p>
+</div>
+<p>Form value {{ cardForm.value | json }}</p>
+<p>Form status {{ cardForm.status | json }}</p>

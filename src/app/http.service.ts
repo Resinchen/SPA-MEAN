@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RequestedPayment } from './RequestedPayment';
 import { ClientPayment } from './ClientPayment';
+import { CardPayment } from './CardPayment';
 
 @Injectable({
     providedIn: 'root'
@@ -19,6 +20,10 @@ export class HttpService {
 
     postClPayments(user: ClientPayment) {
         return this.http.post('http://localhost:3012/client-payment', user);
+    }
+
+    postCardPayments(user: CardPayment) {
+        return this.http.post('http://localhost:3012/card-payment', user);
     }
 
     getCPayments() {
