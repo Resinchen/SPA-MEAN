@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
     selector: 'app-foot',
@@ -7,9 +7,18 @@ import { AppComponent } from 'src/app/app.component';
     styleUrls: ['./foot.component.css']
 })
 export class FootComponent implements OnInit {
-    fullname = AppComponent.fullname;
+    userDetails;
 
-    constructor() {}
+    constructor(private authService: AuthService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.authService.getUserProfile().subscribe(
+            res => {
+                this.userDetails = res;
+            },
+            err => {
+                console.log(err);
+            }
+        );
+    }
 }

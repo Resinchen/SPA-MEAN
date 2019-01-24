@@ -4,6 +4,8 @@ import { RequestedPayment } from './RequestedPayment';
 import { ClientPayment } from './ClientPayment';
 import { CardPayment } from './CardPayment';
 
+const api_uri = 'http://localhost:3012';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -11,34 +13,34 @@ export class HttpService {
     constructor(private http: HttpClient) {}
 
     getRPayments() {
-        return this.http.get('http://localhost:3012/requested-payment');
+        return this.http.get(api_uri + '/requested-payment');
     }
 
     postRPayments(user: RequestedPayment) {
-        return this.http.post('http://localhost:3012/requested-payment', user);
+        return this.http.post(api_uri + '/requested-payment', user);
     }
 
     postClPayments(user: ClientPayment) {
-        return this.http.post('http://localhost:3012/client-payment', user);
+        return this.http.post(api_uri + '/client-payment', user);
     }
 
     postCardPayments(user: CardPayment) {
-        return this.http.post('http://localhost:3012/card-payment', user);
+        return this.http.post(api_uri + '/card-payment', user);
     }
 
     getCPayments() {
-        return this.http.get('http://localhost:3012/card-payment');
+        return this.http.get(api_uri + '/card-payment');
     }
 
     updateSafePayment(id: string) {
-        return this.http.patch('http://localhost:3012/card-payment', {
+        return this.http.patch(api_uri + '/card-payment', {
             _id: id,
             field: 'notsafe'
         });
     }
 
     updateCorrectPayment(id: string) {
-        return this.http.patch('http://localhost:3012/card-payment', {
+        return this.http.patch(api_uri + '/card-payment', {
             _id: id,
             field: 'notcorrect'
         });
@@ -58,11 +60,11 @@ export class HttpService {
         }
         if (isCardTable) {
             return this.http.get(
-                `http://localhost:3012/card-payment?field=${field}&filter=${filter}`
+                api_uri + `/card-payment?field=${field}&filter=${filter}`
             );
         } else {
             return this.http.get(
-                `http://localhost:3012/requested-payment?field=${field}&filter=${filter}`
+                api_uri + `/requested-payment?field=${field}&filter=${filter}`
             );
         }
     }

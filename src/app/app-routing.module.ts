@@ -7,20 +7,27 @@ import { ClientPaymentComponent } from './payments/client-payment/client-payment
 import { RequestedPaymentComponent } from './payments/requested-payment/requested-payment.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PayComponent } from './payments/pay/pay.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-    { path: 'admin', component: AdminPanelComponent },
-    { path: '', redirectTo: 'pay/card-payment', pathMatch: 'full'},
+    { path: 'login', component: LoginComponent },
+    { path: 'admin', component: AdminPanelComponent, canActivate: [AuthGuard] },
+    { path: '', redirectTo: 'pay/card-payment', pathMatch: 'full' },
     {
         path: '',
         component: PaymentsComponent,
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'pay',
                 component: PayComponent,
                 children: [
                     { path: 'card-payment', component: CardPaymentComponent },
-                    { path: 'client-payment', component: ClientPaymentComponent }
+                    {
+                        path: 'client-payment',
+                        component: ClientPaymentComponent
+                    }
                 ]
             },
             { path: 'requested-payment', component: RequestedPaymentComponent }

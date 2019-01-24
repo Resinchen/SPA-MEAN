@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
 import { RequestedPaymentComponent } from './requested-payment/requested-payment.component';
 import { CardPaymentComponent } from './card-payment/card-payment.component';
 import { ClientPaymentComponent } from './client-payment/client-payment.component';
+
 import { PaymentsComponent } from './payments/payments.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import { HeadComponent } from './head/head.component';
 import { FootComponent } from './foot/foot.component';
-import { RouterModule, Routes } from '@angular/router';
 import { PayComponent } from './pay/pay.component';
 
 const routes: Routes = [

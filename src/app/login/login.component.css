@@ -1,0 +1,58 @@
+.container {
+    width: 100%;
+    font-family: Helvetica, Roboto, sans-serif;
+}
+
+form {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.outer-box {
+    background: url('../../login-background.png') no-repeat;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    margin-top: 8%;
+    padding-top: 50px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+}
+
+.texts,
+.form-group {
+    text-align: center;
+}
+
+#welcome {
+    margin: 0;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#email-box {
+    margin-top: 40px;
+}
+
+#password-box {
+    margin-top: 10px;
+}
+
+#btn-box {
+    margin-top: 35px;
+}
+
+#label-auth {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.input-form {
+    width: 250px;
+    font-size: 18px;
+}

@@ -48,7 +48,7 @@ export class AdminPanelComponent implements OnInit {
     toggle() {
         this.showCardTable = !this.showCardTable;
     }
-    // Че-то тут не то...
+
     updateSafe(cpayment) {
         this.httpService.updateSafePayment(cpayment._id).subscribe(
             err => {
