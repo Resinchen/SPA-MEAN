@@ -42,3 +42,9 @@ a {
 nav {
     margin: 42px 0;
 }
+
+@media (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+}

@@ -8,6 +8,7 @@ import {
     ValidationErrors
 } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
     selector: 'app-requested-payment',
@@ -18,10 +19,20 @@ export class RequestedPaymentComponent implements OnInit {
     private rPayment: RequestedPayment;
     reqForm: FormGroup;
     done = false;
+    userDetails;
 
-    constructor(private fb: FormBuilder, private http: HttpService) {}
+    constructor(private fb: FormBuilder, private http: HttpService, private authService: AuthService) {}
 
     ngOnInit() {
+        this.authService.getUserProfile().subscribe(
+            res => {
+                this.userDetails = res;
+            },
+            err => {
+                console.log(err);
+            }
+        );
+
         this.reqForm = this.fb.group({
             inn: [
                 '',

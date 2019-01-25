@@ -22,3 +22,17 @@ nav {
     font-family: Helvetica, Roboto, sans-serif;
     margin: 30px 30px 0;
 }
+
+@media (max-width: 768px) {
+    nav {
+        text-align: center;
+    }
+
+    nav > a {
+        margin: 0;
+    }
+
+    nav > a:first-child {
+        margin-right: 10%;
+    }
+}
