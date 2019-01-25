@@ -86,6 +86,10 @@ input.ng-valid {
     border-color: green;
 }
 
+input.ng-invalid.ng-dirty {
+    border-color: red;
+}
+
 .btn {
     width: 250px;
     height: 40px;

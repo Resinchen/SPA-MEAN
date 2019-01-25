@@ -62,6 +62,14 @@
     font-size: 14px;
 }
 
+input.ng-valid {
+    border-color: green;
+}
+
+input.ng-invalid.ng-dirty {
+    border-color: red;
+}
+
 #nds1:not(:checked) ~ label[for='nds1'],
 #nds2:not(:checked) ~ label[for='nds2'],
 #nds3:not(:checked) ~ label[for='nds3'] {
@@ -98,7 +106,8 @@
 
 input[type="text"],
 input[type="tel"],
-input[type="number"] {
+input[type="number"],
+input[type="email"] {
     font-size: 16px;
 }
 
@@ -128,6 +137,14 @@ input[type="number"] {
 
 .ng-valid.bottom-border {
     border-color: green;
+}
+
+.ng-invalid.ng-dirty.bottom-border {
+    border-color: red;
+}
+
+.ng-invalid.ng-dirty.none-border {
+    border: 1px solid red;
 }
 
 @media (max-width: 768px) {

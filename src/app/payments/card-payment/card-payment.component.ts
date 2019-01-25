@@ -42,7 +42,7 @@ export class CardPaymentComponent implements OnInit {
                 ]
             ],
             comment: ['', [Validators.maxLength(150)]],
-            email: ['', [Validators.required]]
+            email: ['', [Validators.required, Validators.email]]
         });
     }
 

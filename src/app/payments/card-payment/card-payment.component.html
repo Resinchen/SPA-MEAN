@@ -2,9 +2,18 @@
     <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
         <div class="card-box">
             <div class="images">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2000px-Visa_Inc._logo.svg.png" alt="visa" />
-                <img src="https://logospng.org/download/mastercard/logo-mastercard-256.png" alt="mastercard" />
-                <img src="https://cdn.iconscout.com/icon/free/png-256/maestro-6-711794.png" alt="maestro" />
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2000px-Visa_Inc._logo.svg.png"
+                    alt="visa"
+                />
+                <img
+                    src="https://logospng.org/download/mastercard/logo-mastercard-256.png"
+                    alt="mastercard"
+                />
+                <img
+                    src="https://cdn.iconscout.com/icon/free/png-256/maestro-6-711794.png"
+                    alt="maestro"
+                />
             </div>
             <div id="number-form-group" class="form-group">
                 <input
@@ -13,6 +22,7 @@
                     placeholder="Номер карты"
                     id="numberForm"
                     formControlName="number"
+                    pattern="\d{16}"
                 />
             </div>
             <div id="ttl-form-group" class="form-group">
@@ -22,6 +32,7 @@
                     placeholder="ММ/ГГ"
                     id="ttlForm"
                     formControlName="ttl"
+                    pattern="[01]\d/\d\d"
                 />
             </div>
             <div id="cvc-form-group" class="form-group">
@@ -30,13 +41,17 @@
                     class="bottom-border tiny-border"
                     placeholder="CVC"
                     id="cvcForm"
+                    maxlength="3"
+                    pattern="\d{3}"
                     formControlName="cvc"
                 />
             </div>
         </div>
         <div class="outer-box">
             <div class="form-group">
-                <label for="howmuchForm" id="summa-label" class="control-label">Сумма</label>
+                <label for="howmuchForm" id="summa-label" class="control-label"
+                    >Сумма</label
+                >
                 <input
                     type="number"
                     class="none-border"
@@ -63,7 +78,7 @@
             </div>
 
             <div class="form-group">
-                <label for="emailForm" id="email-label"  class="control-label">
+                <label for="emailForm" id="email-label" class="control-label">
                     Ваша эл. почта
                 </label>
                 <input

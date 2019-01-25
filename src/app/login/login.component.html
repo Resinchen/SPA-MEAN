@@ -1,4 +1,7 @@
 <div class="container">
+    <div class="invalidForm" *ngIf="validForm">
+        Проверьте правильность введенных данных
+    </div>
     <div class="outer-box">
         <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
             <div class="texts">

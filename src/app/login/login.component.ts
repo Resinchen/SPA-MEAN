@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     done = false;
+    validForm = false;
 
     constructor(
         private fb: FormBuilder,
@@ -44,6 +45,8 @@ export class LoginComponent implements OnInit {
                 },
                 err => {}
             );
+        } else {
+            this.validForm = true;
         }
     }
     private loginValidator(control: FormControl): ValidationErrors {

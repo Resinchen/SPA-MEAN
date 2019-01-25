@@ -103,6 +103,10 @@ input.ng-valid:not(.not-selection) {
     border-color: green;
 }
 
+input.ng-invalid.ng-dirty:not(.not-selection) {
+    border-color: red;
+}
+
 .btn-submit:enabled {
     color: black;
     font-weight: bold;
