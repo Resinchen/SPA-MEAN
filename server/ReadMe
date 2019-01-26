@@ -1,0 +1,1 @@
+Для JWT использовать .env файл с JWT_SECRET=secret_str и JWT_EXP=10 m
