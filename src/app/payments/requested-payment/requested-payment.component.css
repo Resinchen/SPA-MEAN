@@ -135,16 +135,20 @@ input[type="email"] {
     border: 0;
 }
 
-.ng-valid.bottom-border {
+input.ng-valid {
     border-color: green;
 }
 
-.ng-invalid.ng-dirty.bottom-border {
+input.ng-invalid.ng-dirty {
     border-color: red;
 }
 
-.ng-invalid.ng-dirty.none-border {
-    border: 1px solid red;
+.none-border.ng-valid {
+    border-bottom: 1px solid green;
+}
+
+.none-border.ng-invalid.ng-dirty {
+    border-bottom: 1px solid red;
 }
 
 @media (max-width: 768px) {
