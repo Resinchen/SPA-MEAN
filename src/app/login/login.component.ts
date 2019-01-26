@@ -15,9 +15,11 @@ import { Router } from '@angular/router';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+    invalidText: String;
+
     loginForm: FormGroup;
     done = false;
-    validForm = false;
+    invalidForm = false;
 
     constructor(
         private fb: FormBuilder,
@@ -40,13 +42,21 @@ export class LoginComponent implements OnInit {
             console.log(this.loginForm.value);
             this.authService.login(this.loginForm.value).subscribe(
                 res => {
+                    this.invalidForm = false;
                     this.authService.setToken(res['token']);
                     this.router.navigateByUrl('/pay/client-payment');
                 },
-                err => {}
+                err => {
+                    console.log(err);
+                    if (err.error.message === 'Неизвестный email') {
+                        this.invalidText = 'Неправильный email';
+                        this.invalidForm = true;
+                    } else if (err.error.message === 'Неправильный пароль') {
+                        this.invalidText = 'Неправильный пароль';
+                        this.invalidForm = true;
+                    }
+                }
             );
-        } else {
-            this.validForm = true;
         }
     }
     private loginValidator(control: FormControl): ValidationErrors {
