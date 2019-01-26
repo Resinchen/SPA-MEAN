@@ -58,6 +58,7 @@ export class CardPaymentComponent implements OnInit {
                 },
                 error => console.log(error)
             );
+            this.cardForm.reset();
         }
     }
 }
