@@ -86,8 +86,16 @@ input.ng-valid {
     border-color: green;
 }
 
+.none-border.ng-valid {
+    border-bottom: 1px solid green;
+}
+
 input.ng-invalid.ng-dirty {
     border-color: red;
+}
+
+.none-border.ng-invalid.ng-dirty {
+    border-bottom: 1px solid red;
 }
 
 .btn {

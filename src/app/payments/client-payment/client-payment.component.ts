@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { HttpService } from 'src/app/http.service';
 import { ClientPayment } from 'src/app/ClientPayment';
+import { saveAs } from 'file-saver';
 
 @Component({
     selector: 'app-client-payment',
@@ -67,10 +68,7 @@ export class ClientPaymentComponent implements OnInit {
             console.log(this.clPayment);
 
             this.http.postClPayments(this.clPayment).subscribe(
-                (data: ClientPayment) => {
-                    this.clPayment = data;
-                    this.done = true;
-                },
+                data => saveAs(data),
                 error => console.log(error)
             );
         }

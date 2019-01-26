@@ -21,7 +21,9 @@ export class HttpService {
     }
 
     postClPayments(user: ClientPayment) {
-        return this.http.post(api_uri + '/client-payment', user);
+        return this.http.post(api_uri + '/client-payment', user, {
+            responseType: 'blob',
+            headers: new HttpHeaders().append('Content-Type', 'application/json')});
     }
 
     postCardPayments(user: CardPayment) {
