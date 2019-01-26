@@ -1,9 +1,10 @@
 <div class="admin-panel">
-    <div>
+    <div class="admin-control">
         <!--
       Сделать поиск и смену в верху страницы, что-то сделать с сортировкой (возможно в самой таблице)
     -->
-        <form class="search">
+        <button id="trigger_button" (click)="toggle()">Toggle to {{ tableName }}</button>
+        <form class="search admin-control-form">
             <input
                 type="text"
                 [(ngModel)]="searchField"
@@ -20,7 +21,7 @@
             />
             <input type="submit" (click)="search()" value="Поиск" />
         </form>
-        <form class="sorter">
+        <form class="sorter admin-control-form">
             <input
                 type="text"
                 [(ngModel)]="searchField"
@@ -37,8 +38,6 @@
             />
             <input type="submit" (click)="search()" value="Поиск" />
         </form>
-        <button id="trigger_button" (click)="toggle()">Toggle</button>
-        <button id="logout_button" (click)="logout()">Logout</button>
     </div>
 
     <!-- Таблица для запрошенных платежей -->

@@ -90,3 +90,22 @@ aside {
 .btn_patch[value='false'] {
     background: red;
 }
+
+#trigger_button {
+    width: 150px;
+}
+
+.admin-control {
+    display: flex;
+    justify-content: space-around;
+}
+
+.admin-control-form {
+    width: 200px;
+    text-align: center;
+}
+
+#search-field,
+#filter {
+    margin-bottom: 5px;
+}

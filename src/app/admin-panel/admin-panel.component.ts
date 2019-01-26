@@ -27,6 +27,7 @@ const fields: { [id: string]: string } = {
     providers: [HttpService]
 })
 export class AdminPanelComponent implements OnInit {
+    tableName = 'Requested payment';
     cpayments: CardPayment[] = [];
     rpayments: RequestedPayment[] = [];
     showCardTable = true;
@@ -47,6 +48,7 @@ export class AdminPanelComponent implements OnInit {
 
     toggle() {
         this.showCardTable = !this.showCardTable;
+        this.tableName = !this.showCardTable ? 'Card payment' : 'Requested payment';
     }
 
     updateSafe(cpayment) {
